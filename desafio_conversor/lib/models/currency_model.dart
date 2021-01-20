@@ -5,7 +5,13 @@ class CurrencyModel {
   final double euro;
   final double bitcoin;
 
-  CurrencyModel({this.name, this.real, this.dolar, this.euro, this.bitcoin});
+  CurrencyModel({
+    this.name,
+    this.real,
+    this.dolar,
+    this.euro,
+    this.bitcoin,
+  });
 
   static List<CurrencyModel> getCurrencies() {
     return <CurrencyModel>[

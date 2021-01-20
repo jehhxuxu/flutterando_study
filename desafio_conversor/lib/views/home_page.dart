@@ -38,54 +38,11 @@ class _HomePageState extends State<HomePage> {
           SizedBox(
             height: 50,
           ),
-          Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Expanded(
-                flex: 1,
-                child: Container(
-                  height: 56,
-                  child: DropdownButton<CurrencyModel>(
-                    isExpanded: true,
-                    underline: Container(
-                      height: 1,
-                      color: Color(0xffFFCB05),
-                    ),
-                    onChanged: (value) {},
-                    items: [
-                      DropdownMenuItem(
-                        child: Text('Real'),
-                      ),
-                      DropdownMenuItem(
-                        child: Text('Dolar'),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                width: 20,
-              ),
-              Expanded(
-                flex: 2,
-                child: TextFormField(
-                  cursorColor: Color(0xffFFCB05),
-                  decoration: InputDecoration(
-                    enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xffFFCB05),
-                      ),
-                    ),
-                    focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Color(0xffFFCB05),
-                      ),
-                    ),
-                  ),
-                ),
-              )
-            ],
+          currencyConverter(),
+          SizedBox(
+            height: 10,
           ),
+          currencyConverter(),
           SizedBox(
             height: 50,
           ),
@@ -109,12 +66,17 @@ class _HomePageState extends State<HomePage> {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          height: 55,
-          child: Expanded(
-            flex: 1,
+        Expanded(
+          flex: 1,
+          child: Container(
+            height: 56,
             child: DropdownButton<CurrencyModel>(
-              onChanged: null,
+              isExpanded: true,
+              underline: Container(
+                height: 1,
+                color: Color(0xffFFCB05),
+              ),
+              onChanged: (value) {},
               items: [
                 DropdownMenuItem(
                   child: Text('Real'),
@@ -129,7 +91,24 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           width: 20,
         ),
-        Expanded(flex: 2, child: TextFormField())
+        Expanded(
+          flex: 2,
+          child: TextFormField(
+            cursorColor: Color(0xffFFCB05),
+            decoration: InputDecoration(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xffFFCB05),
+                ),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(
+                  color: Color(0xffFFCB05),
+                ),
+              ),
+            ),
+          ),
+        )
       ],
     );
   }
