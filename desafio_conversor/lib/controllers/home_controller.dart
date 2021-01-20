@@ -15,7 +15,11 @@ class HomeController {
   }
 
   void convert() {
-    double fromValue = double.parse(fromCurrencyText.text) ?? 1.0;
+    double fromValue = double.parse(fromCurrencyText.text.replaceAll(
+          ',',
+          '.',
+        )) ??
+        1.0;
     double finalValue = 0;
 
     switch (toCurrency.name) {

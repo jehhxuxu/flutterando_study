@@ -10,6 +10,12 @@ main() {
     fromCurrencyText: fromCurrencyText,
     toCurrencyText: toCurrencyText,
   );
+  test('tratando valor com virgula', () {
+    fromCurrencyText.text = '2,0';
+    toCurrencyText.text = '0';
+    controller.convert();
+    expect(controller.toCurrencyText.text, '0.36');
+  });
   test('converter real para dolar', () {
     fromCurrencyText.text = '11.26';
     toCurrencyText.text = '0';
